@@ -1,0 +1,71 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "ivo",
+      "email": "ivo@gmail.com",
+      "password": "$2a$10$f5uHGslBF3Wq9WJp5Lt/puHOxNt/OgeWPZYb85/wF9fRLPy4qvfuS"
+    },
+    {
+      "email": "tomi@gmail.com",
+      "password": "$2a$10$0u5CJAJRBxt0LAPSIyCRvOyfH0fUqRWHw986Vzp4LNOkguwR0mPje",
+      "username": "Tamás",
+      "documentations": [],
+      "id": 2
+    },
+    {
+      "email": "newuser@gmail.com",
+      "password": "$2a$10$ZHmB8iKbXU16C4OR3uvGG.X0jYol6qRO.qVbxt5GCZyLeAy6RD7Q2",
+      "username": "newuser",
+      "documentations": [],
+      "id": 3
+    }
+  ],
+  "documentations": [
+    {
+      "id": 1,
+      "userId": 1,
+      "position": 1,
+      "title": "halikaa",
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discription": [],
+          "subMenuItems": []
+        }
+      ],
+      "discription": "Ez már lehet így működni fog!"
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "position": 1,
+      "title": "new",
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discription": [],
+          "subMenuItems": []
+        }
+      ],
+      "discription": "Ez már lehet így működni fog!"
+    },
+    {
+      "id": 3,
+      "userId": 1,
+      "position": 2,
+      "title": "ez a másik",
+      "mainMenuItems": [
+        {
+          "title": "valami",
+          "position": 1,
+          "discription": [],
+          "subMenuItems": []
+        }
+      ],
+      "discription": "Ez már lehet így működni fog!"
+    }
+  ]
+}

@@ -1,0 +1,164 @@
+:root{
+    --font-family: 'Times New Roman', Times, serif;
+    --nav-bgcolor: #124044;
+    --main-bgcolor: #181818;
+    --exist-doc-bgcolor: rgb(31, 31, 31);
+    --main-text-color: azure;
+    --sub-text-color: white;
+    --document-title-bgcolor: #123321;
+    --main-menu-bgcolor: #123456;
+    --sub-menu-bgcolor: #654321;
+    --add-btn-bgcolor: rgb(70, 114, 4);
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: var(--main-bgcolor);
+    color: var(--main-text-color);
+    font-family: var(--font-family);
+}
+#app{
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr; 
+    grid-template-rows: 0.1fr 1.8fr; 
+    gap: 0; 
+    grid-template-areas: 
+      "nav"
+      "main"; 
+}
+main { 
+    grid-area: main;
+    display: flex;
+    justify-content: center;
+ }
+nav{
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    gap: 30px;
+    background-color: var(--nav-bgcolor);
+}
+nav a{
+    text-decoration: none;
+    color: var(--main-text-color);
+}
+.edit-container{
+    width: 100%;
+}
+.exist-documentation-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: calc(25vw + 50px);
+    min-width: 130px;
+    float: left;
+    min-height: 100%;
+    background-color: var(--exist-doc-bgcolor);
+}
+.side-menu-btn {
+    align-self: center;
+}
+.exist-documentation-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    width: min-content;
+    font-size: 0.9em;
+    height: min-content;
+}
+.exist-documentation-list p {
+    border-radius: 10px;
+    margin: 2px 5px;
+    text-align: center;
+    width: 20vw;
+    min-width: 100px;
+    height: 2.5em;
+    line-height: 2.5em;
+    filter: sepia(10px);
+    border: 1px solid rgb(0, 0, 0);
+    cursor: pointer;
+}
+.exist-documentation-list p:hover {
+    border: 1px solid azure;
+}
+.exist-documentation-list>p>input{
+    width: 80%;
+}
+.exist-document-title{
+    margin: 0;
+    padding: 0;
+    background-color: var(--document-title-bgcolor);
+}
+.main-menu-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(10px);
+}
+.main-menu-items>p{
+    background-color: var(--main-menu-bgcolor);
+}
+.sub-menu-items{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(10px);
+}
+.sub-menu-items>p{
+    background-color: var(--sub-menu-bgcolor);
+}
+.edit-form, .edit-form div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.plus-menu-btn{
+    margin: 3px 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--add-btn-bgcolor);
+    border: none;
+    color: var(--main-text-color);
+}
+.plus-document-btn{
+    margin: 3px 0;
+    width: 80%;
+    height: 50%;
+    border-radius: 10px;
+    border-radius: 8px;
+    background-color: var(--add-btn-bgcolor);
+    border: none;
+    color: var(--main-text-color);
+    cursor: pointer;
+}
+.login-container{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+.register-container{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
