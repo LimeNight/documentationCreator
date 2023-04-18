@@ -1,4 +1,4 @@
 {
-    "/users*": "/600/users",
-    "/documentations*": "/640/documentations"
+    "/users*": "/600/users$1",
+    "/documentations*": "/640/documentations$1"
   }

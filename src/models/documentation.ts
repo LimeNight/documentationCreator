@@ -1,18 +1,21 @@
+import { ref } from "vue"
+
 export type Discription = {
-    paragraph: string
+    paragraph: string,
+    position: number
 }
 
 export type SubMenuItem = {
     title:string,
     position: number,
-    discription: Discription[]
+    discriptions: Discription[]
 }
 
 export type MainMenuItem = {
     title:string,
     position: number,
-    discription: Discription[],
-    subMenuItems?: SubMenuItem[]
+    discriptions: Discription[],
+    subMenuItems: SubMenuItem[]
 }
 
 export interface IDocumentation{
@@ -20,7 +23,8 @@ export interface IDocumentation{
     userId: number,
     position: number,
     title: string,
-    mainMenuItems: MainMenuItem[]
+    discriptions: Discription[]
+    mainMenuItems?: MainMenuItem[]
 }
 
 export class Documentation implements IDocumentation{
@@ -29,8 +33,16 @@ export class Documentation implements IDocumentation{
         public userId: number = 0,
         public position: number = 0,
         public title: string = 'new',
-        public mainMenuItems: MainMenuItem[] = [{title: 'new', position: 0, discription: [], subMenuItems: []}]
+        public discriptions: Discription[] = [],
+        public mainMenuItems?: MainMenuItem[]
     ){}
 }
+export const calculatePosition = (array:  Documentation[] | MainMenuItem[] | SubMenuItem[] | Discription[]) => {
+    let startPosition: number = 1;
+    array.map(element => { element.position = startPosition++ })
+    console.log(array)
+}
 
-export default { Documentation }
+export const selectedDocumentation = ref<IDocumentation | null>(null)
+export const selectedDocumentaitonItem = ref<IDocumentation | MainMenuItem | SubMenuItem | null>(null)
+export default {}

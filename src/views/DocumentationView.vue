@@ -1,10 +1,9 @@
 <template>
     <SideMenuComponent v-if="user.documentations"
                        :documentations="user?.documentations"
-                       @setSelectedDocumentation="setSelectedDocumentation"/>
+                       @setSelectedDocumentationItem="setSelectedDocumentationItem"/>
     <section class="edit-container">
-        <DocumentEditorComponent v-if="selectedDocumentItem"
-                                 :selectedDocumentItem="selectedDocumentItem"
+        <DocumentEditorComponent v-if="selectedDocumentaitonItem"
                                  @save="save"/>
     </section>
 </template>
@@ -13,18 +12,17 @@
 import SideMenuComponent from '@/components/SideMenuComponent.vue';
 import DocumentEditorComponent from '@/components/DocumentEditorComponent.vue';
 import { ref } from 'vue';
-import axios from 'axios';
-import { config } from '@/utilities/storage';
+import { docRequest } from '@/models/requests';
 import { user } from '@/models/user';
 import type { IDocumentation, MainMenuItem, SubMenuItem } from '../models/documentation';
+import { selectedDocumentation, selectedDocumentaitonItem } from '../models/documentation';
 
-const selectedDocumentItem = ref<MainMenuItem | SubMenuItem | IDocumentation | null>(null)
+const setSelectedDocumentationItem = (item: MainMenuItem | SubMenuItem | IDocumentation): void => { selectedDocumentaitonItem.value = item }
 
-const setSelectedDocumentation = (item: MainMenuItem | SubMenuItem | IDocumentation): void => { selectedDocumentItem.value = item }
-
-const save = async (documentation: IDocumentation) => {
-    await axios.put("http://localhost:3000/documentations/" + user.value.id, documentation, config())
-         .then(res => console.log(res.data))
-         .catch(err => console.log(err));
+const save = async () => {
+    if (selectedDocumentation.value !== null){
+        const res = await docRequest.update(selectedDocumentation.value)
+        console.log(res)
+    }
 }
 </script>

@@ -10,9 +10,8 @@ import LoginForm from '../components/LoginFormComponent.vue';
 import { useRouter } from 'vue-router';
 import { type ILoginForm, user } from '@/models/user';
 import axios from 'axios';
-import { config } from '../utilities/storage';
 import { setToken, setId } from '../utilities/storage';
-import type { IDocumentation } from '../models/documentation';
+import { docRequest } from '../models/requests';
 
 const router = useRouter()
 
@@ -27,18 +26,8 @@ const login = async (form: ILoginForm): Promise<void> => {
             return <number>resUser.user.id
         })
         .then(async (id: number) => {
-            const { headers } = config()
-            await axios("http://localhost:3000/documentations", {params:{ userId: id}, headers})
-                .then(res => {
-                    console.log(res.data)
-                    user.value.documentations = res.data
-                    console.log(user.value.documentations)
-                    router.replace('/')
-                })
-                .catch(() => {
-                    console.log('Nincs még dokumentáció!')
-                    router.replace('/')
-                })
+            user.value.documentations = await docRequest.read(id)
+            router.replace('/')
         })
         .catch(err => {
             console.log(err)

@@ -31,7 +31,4 @@ export const swapId = (userId: string): void => {
     deleteId()
     setId(userId)
 }
-
-// let token = getToken()
-export const config = () => {return { headers: { Authorization: `Bearer ${getToken()}` } }}
 export default {}

@@ -26,46 +26,107 @@
       "id": 1,
       "userId": 1,
       "position": 1,
-      "title": "halikaa",
+      "title": "ez is fasza lesz így",
       "mainMenuItems": [
+        {
+          "title": "na most lesz igazán jó",
+          "position": 1,
+          "discriptions": [
+            {
+              "position": 1,
+              "paragraph": "most jó"
+            }
+          ],
+          "subMenuItems": [
+            {
+              "title": "na most jó lösz?",
+              "position": 1,
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": "hajráááá"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "my new main title",
+          "position": 2,
+          "discriptions": [
+            {
+              "paragraph": "Itt adhatsz meg bármit"
+            }
+          ],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": [
+                {
+                  "paragraph": ""
+                }
+              ]
+            },
+            {
+              "title": "szerekeszt",
+              "position": 2,
+              "discriptions": [
+                {
+                  "paragraph": ""
+                }
+              ]
+            }
+          ]
+        },
         {
           "title": "new",
-          "position": 1,
-          "discription": [],
-          "subMenuItems": []
+          "position": 3,
+          "discriptions": [
+            {
+              "paragraph": ""
+            }
+          ],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": [
+                {
+                  "paragraph": ""
+                }
+              ]
+            },
+            {
+              "title": "newest",
+              "position": 2,
+              "discriptions": [
+                {
+                  "paragraph": ""
+                }
+              ]
+            }
+          ]
         }
       ],
-      "discription": "Ez már lehet így működni fog!"
-    },
-    {
-      "id": 2,
-      "userId": 2,
-      "position": 1,
-      "title": "new",
-      "mainMenuItems": [
+      "discriptions": [
         {
-          "title": "new",
-          "position": 1,
-          "discription": [],
-          "subMenuItems": []
-        }
-      ],
-      "discription": "Ez már lehet így működni fog!"
-    },
-    {
-      "id": 3,
-      "userId": 1,
-      "position": 2,
-      "title": "ez a másik",
-      "mainMenuItems": [
+          "paragraph": "na nézzük ezt elmenti e",
+          "position": 1
+        },
         {
-          "title": "valami",
-          "position": 1,
-          "discription": [],
-          "subMenuItems": []
+          "position": 2,
+          "paragraph": "Na végre"
+        },
+        {
+          "paragraph": "második paragraph!",
+          "position": 3
+        },
+        {
+          "position": 4,
+          "paragraph": ""
         }
-      ],
-      "discription": "Ez már lehet így működni fog!"
+      ]
     }
   ]
 }

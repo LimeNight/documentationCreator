@@ -1,8 +1,8 @@
 <template>
   <Navigation />
-  
+
   <main>
-    <RouterView/>
+    <RouterView />
   </main>
 </template>
 
@@ -10,28 +10,20 @@
 import { RouterView } from 'vue-router'
 import { onBeforeMount } from 'vue';
 import { user } from './models/user'
-import { getToken, getId, config } from './utilities/storage';
+import { getToken, getId } from './utilities/storage';
 import Navigation from './components/NavigationComponent.vue';
 import axios from 'axios';
-import type { IDocumentation } from './models/documentation';
+import { config } from './models/requests';
+import { docRequest } from './models/requests';
 
 const getUser = async (id: number): Promise<void> => {
-    await  axios("http://localhost:3000/users/" + id, config())
-      .then(res => {
-        user.value = res.data
-        user.value.authenticate = true
-      })
-      .then(async () => {
-        const { headers } = config()
-        await axios("http://localhost:3000/documentations", {params:{ userId: id}, headers})
-          .then(res => {
-              console.log(res.data)
-              user.value.documentations = res.data
-          })
-          .catch(err => console.log(err))
-      })
-      .catch(err => console.log(err))
-
+  await axios("http://localhost:3000/users/" + id, config())
+    .then(res => {
+      user.value = res.data
+      user.value.authenticate = true
+    })
+    .then(async () => { user.value.documentations = await docRequest.read(id) })
+    .catch(err => console.log(err))
 }
 
 onBeforeMount(async (): Promise<void> => {

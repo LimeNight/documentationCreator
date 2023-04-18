@@ -1,4 +1,4 @@
-import type {IDocumentation} from "./documentation"
+import type { IDocumentation } from "./documentation"
 import { ref } from "vue"
 
 export interface ILoginForm{
@@ -8,12 +8,12 @@ export interface ILoginForm{
 
 export interface IRegister extends ILoginForm{
         username?: string
-        documentations?: IDocumentation[]
 }
 
 export interface IUser extends IRegister{
         id?: number,
         authenticate: boolean
+        documentations?: IDocumentation[]
 }
 
 export class User implements IUser{
