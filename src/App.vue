@@ -22,7 +22,7 @@ const getUser = async (id: number): Promise<void> => {
       user.value = res.data
       user.value.authenticate = true
     })
-    .then(async () => { user.value.documentations = await docRequest.read(id) })
+    .then(async () => { user.value.documentations = await docRequest.read(id)})
     .catch(err => console.log(err))
 }
 

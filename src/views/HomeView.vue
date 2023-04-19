@@ -1,6 +1,6 @@
 <template>
     <div>
-        {{ user }}
+        {{ user.documentations.length }}
     </div>
 </template>
 

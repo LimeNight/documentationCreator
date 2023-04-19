@@ -10,14 +10,12 @@
       "email": "tomi@gmail.com",
       "password": "$2a$10$0u5CJAJRBxt0LAPSIyCRvOyfH0fUqRWHw986Vzp4LNOkguwR0mPje",
       "username": "Tamás",
-      "documentations": [],
       "id": 2
     },
     {
       "email": "newuser@gmail.com",
       "password": "$2a$10$ZHmB8iKbXU16C4OR3uvGG.X0jYol6qRO.qVbxt5GCZyLeAy6RD7Q2",
       "username": "newuser",
-      "documentations": [],
       "id": 3
     }
   ],
@@ -25,7 +23,7 @@
     {
       "id": 1,
       "userId": 1,
-      "position": 1,
+      "position": 3,
       "title": "ez is fasza lesz így",
       "mainMenuItems": [
         {
@@ -47,12 +45,37 @@
                   "paragraph": "hajráááá"
                 }
               ]
+            },
+            {
+              "title": "works yeeee",
+              "position": 2,
+              "discriptions": []
+            }
+          ]
+        },
+        {
+          "title": "new",
+          "position": 2,
+          "discriptions": [
+            {
+              "paragraph": ""
+            }
+          ],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": [
+                {
+                  "paragraph": ""
+                }
+              ]
             }
           ]
         },
         {
           "title": "my new main title",
-          "position": 2,
+          "position": 3,
           "discriptions": [
             {
               "paragraph": "Itt adhatsz meg bármit"
@@ -78,55 +101,155 @@
               ]
             }
           ]
-        },
-        {
-          "title": "new",
-          "position": 3,
-          "discriptions": [
-            {
-              "paragraph": ""
-            }
-          ],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": [
-                {
-                  "paragraph": ""
-                }
-              ]
-            },
-            {
-              "title": "newest",
-              "position": 2,
-              "discriptions": [
-                {
-                  "paragraph": ""
-                }
-              ]
-            }
-          ]
         }
       ],
       "discriptions": [
         {
           "paragraph": "na nézzük ezt elmenti e",
           "position": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "position": 1,
+      "title": "Api documentació",
+      "discriptions": [],
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 2,
+          "discriptions": [],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": []
+            }
+          ]
+        },
+        {
+          "title": "First Main",
+          "position": 1,
+          "discriptions": [
+            {
+              "position": 1,
+              "paragraph": "nézzük így mit művel"
+            }
+          ],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": []
+            },
+            {
+              "title": "Teljesen jónak tűnik",
+              "position": 2,
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": "hogy vagy margit?"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "userId": 2,
+      "position": 3,
+      "title": "Gecijóóó XD",
+      "discriptions": [],
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discriptions": [],
+          "subMenuItems": [
+            {
+              "title": "newest",
+              "position": 1,
+              "discriptions": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "userId": 2,
+      "position": 2,
+      "title": "gatyaaa xD",
+      "discriptions": [
+        {
+          "position": 1,
+          "paragraph": "többet is hozzá tudok adni?"
         },
         {
           "position": 2,
-          "paragraph": "Na végre"
+          "paragraph": "Meglátjuk"
+        }
+      ],
+      "mainMenuItems": []
+    },
+    {
+      "id": 5,
+      "userId": 1,
+      "position": 1,
+      "title": "new",
+      "discriptions": [],
+      "mainMenuItems": []
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "position": 2,
+      "title": "new",
+      "discriptions": [],
+      "mainMenuItems": []
+    },
+    {
+      "id": 7,
+      "userId": 3,
+      "position": 1,
+      "title": "jujjjj",
+      "discriptions": [],
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discriptions": [
+            {
+              "position": 1,
+              "paragraph": "vlaami yeee"
+            }
+          ],
+          "subMenuItems": []
         },
         {
-          "paragraph": "második paragraph!",
-          "position": 3
-        },
-        {
-          "position": 4,
-          "paragraph": ""
+          "title": "was first",
+          "position": 2,
+          "discriptions": [
+            {
+              "position": 1,
+              "paragraph": "vlaami yeee"
+            }
+          ],
+          "subMenuItems": []
         }
       ]
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "position": 2,
+      "title": "Second Documentation",
+      "discriptions": [],
+      "mainMenuItems": []
     }
   ]
 }

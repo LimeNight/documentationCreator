@@ -1,4 +1,6 @@
 import { ref } from "vue"
+import { docRequest } from "./requests"
+import { user } from "./user"
 
 export type Discription = {
     paragraph: string,
@@ -24,7 +26,7 @@ export interface IDocumentation{
     position: number,
     title: string,
     discriptions: Discription[]
-    mainMenuItems?: MainMenuItem[]
+    mainMenuItems: MainMenuItem[]
 }
 
 export class Documentation implements IDocumentation{
@@ -34,15 +36,15 @@ export class Documentation implements IDocumentation{
         public position: number = 0,
         public title: string = 'new',
         public discriptions: Discription[] = [],
-        public mainMenuItems?: MainMenuItem[]
+        public mainMenuItems: MainMenuItem[] = []
     ){}
 }
+export const selectedDocumentation = ref<IDocumentation | null>(null)
+export const selectedDocumentaitonItem = ref<IDocumentation | MainMenuItem | SubMenuItem | null>(null)
+
 export const calculatePosition = (array:  Documentation[] | MainMenuItem[] | SubMenuItem[] | Discription[]) => {
     let startPosition: number = 1;
     array.map(element => { element.position = startPosition++ })
-    console.log(array)
 }
 
-export const selectedDocumentation = ref<IDocumentation | null>(null)
-export const selectedDocumentaitonItem = ref<IDocumentation | MainMenuItem | SubMenuItem | null>(null)
 export default {}

@@ -26,9 +26,7 @@ import { calculatePosition,
          type SubMenuItem,
          type MainMenuItem } from '@/models/documentation';
 import { docRequest } from '@/models/requests';
-import { defineEmits, reactive, onBeforeUnmount } from 'vue';
-
-const emit = defineEmits(['save'])
+import { reactive } from 'vue';
 
 let newDiscription = reactive<Discription>({
     position: 1,
@@ -42,11 +40,5 @@ const addDiscription = async (documentation: IDocumentation, selectedItem: IDocu
         docRequest.update(documentation)
     }
 }
-
 const save = async (): Promise<void> => { if (selectedDocumentation.value) docRequest.update(selectedDocumentation.value) }
-
-onBeforeUnmount(() => {
-    selectedDocumentation.value = null
-    selectedDocumentaitonItem.value = null
-})
 </script>

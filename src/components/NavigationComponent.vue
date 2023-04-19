@@ -16,9 +16,9 @@ import { deleteToken, deleteId } from '@/utilities/storage';
 const router = useRouter()
 
 const logout = (): void => {
+    router.replace('/login')
     deleteToken()
     deleteId()
     user.value = new User()
-    router.replace('/login')
 }
 </script>

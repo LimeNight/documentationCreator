@@ -13,7 +13,6 @@ export interface IRegister extends ILoginForm{
 export interface IUser extends IRegister{
         id?: number,
         authenticate: boolean
-        documentations?: IDocumentation[]
 }
 
 export class User implements IUser{
