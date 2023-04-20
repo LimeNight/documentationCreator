@@ -23,86 +23,9 @@
     {
       "id": 1,
       "userId": 1,
-      "position": 3,
+      "position": 1,
       "title": "ez is fasza lesz így",
-      "mainMenuItems": [
-        {
-          "title": "na most lesz igazán jó",
-          "position": 1,
-          "discriptions": [
-            {
-              "position": 1,
-              "paragraph": "most jó"
-            }
-          ],
-          "subMenuItems": [
-            {
-              "title": "na most jó lösz?",
-              "position": 1,
-              "discriptions": [
-                {
-                  "position": 1,
-                  "paragraph": "hajráááá"
-                }
-              ]
-            },
-            {
-              "title": "works yeeee",
-              "position": 2,
-              "discriptions": []
-            }
-          ]
-        },
-        {
-          "title": "new",
-          "position": 2,
-          "discriptions": [
-            {
-              "paragraph": ""
-            }
-          ],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": [
-                {
-                  "paragraph": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "title": "my new main title",
-          "position": 3,
-          "discriptions": [
-            {
-              "paragraph": "Itt adhatsz meg bármit"
-            }
-          ],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": [
-                {
-                  "paragraph": ""
-                }
-              ]
-            },
-            {
-              "title": "szerekeszt",
-              "position": 2,
-              "discriptions": [
-                {
-                  "paragraph": ""
-                }
-              ]
-            }
-          ]
-        }
-      ],
+      "mainMenuItems": [],
       "discriptions": [
         {
           "paragraph": "na nézzük ezt elmenti e",
@@ -111,106 +34,33 @@
       ]
     },
     {
-      "id": 2,
-      "userId": 2,
-      "position": 1,
-      "title": "Api documentació",
-      "discriptions": [],
-      "mainMenuItems": [
-        {
-          "title": "new",
-          "position": 2,
-          "discriptions": [],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": []
-            }
-          ]
-        },
-        {
-          "title": "First Main",
-          "position": 1,
-          "discriptions": [
-            {
-              "position": 1,
-              "paragraph": "nézzük így mit művel"
-            }
-          ],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": []
-            },
-            {
-              "title": "Teljesen jónak tűnik",
-              "position": 2,
-              "discriptions": [
-                {
-                  "position": 1,
-                  "paragraph": "hogy vagy margit?"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "userId": 2,
-      "position": 3,
-      "title": "Gecijóóó XD",
-      "discriptions": [],
-      "mainMenuItems": [
-        {
-          "title": "new",
-          "position": 1,
-          "discriptions": [],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": []
-            }
-          ]
-        }
-      ]
-    },
-    {
       "id": 4,
       "userId": 2,
-      "position": 2,
-      "title": "gatyaaa xD",
+      "position": 1,
+      "title": "Api",
       "discriptions": [
         {
           "position": 1,
-          "paragraph": "többet is hozzá tudok adni?"
+          "paragraph": "Adatokat szolgáltat a kliensek számára."
         },
         {
           "position": 2,
           "paragraph": "Meglátjuk"
         }
       ],
-      "mainMenuItems": []
-    },
-    {
-      "id": 5,
-      "userId": 1,
-      "position": 1,
-      "title": "new",
-      "discriptions": [],
-      "mainMenuItems": []
-    },
-    {
-      "id": 6,
-      "userId": 1,
-      "position": 2,
-      "title": "new",
-      "discriptions": [],
-      "mainMenuItems": []
+      "mainMenuItems": [
+        {
+          "title": "Első fejezet",
+          "position": 1,
+          "discriptions": [
+            {
+              "position": 1,
+              "paragraph": "Nem tudom ide már mit kéne írnom."
+            }
+          ],
+          "subMenuItems": []
+        }
+      ]
     },
     {
       "id": 7,
@@ -246,10 +96,32 @@
     {
       "id": 8,
       "userId": 3,
-      "position": 2,
+      "position": 3,
       "title": "Second Documentation",
       "discriptions": [],
-      "mainMenuItems": []
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discriptions": [],
+          "subMenuItems": []
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "userId": 3,
+      "position": 2,
+      "title": "new",
+      "discriptions": [],
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discriptions": [],
+          "subMenuItems": []
+        }
+      ]
     }
   ]
 }

@@ -27,5 +27,3 @@ export class User implements IUser{
 }
 
 export const user = ref<User>(new User())
-
-export default {}

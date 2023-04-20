@@ -17,7 +17,7 @@ import { config } from './models/requests';
 import { docRequest } from './models/requests';
 
 const getUser = async (id: number): Promise<void> => {
-  await axios("http://localhost:3000/users/" + id, config())
+  await axios("http://localhost:3000/users/" + id, config)
     .then(res => {
       user.value = res.data
       user.value.authenticate = true

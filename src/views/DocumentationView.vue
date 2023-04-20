@@ -1,6 +1,5 @@
 <template>
-    <SideMenuComponent  v-if="user.documentations"
-                        @setSelectedDocumentationItem="setSelectedDocumentationItem"/>
+    <SideMenuComponent  v-if="user.documentations" />
     <section class="edit-container">
         <DocumentEditorComponent/>
     </section>
@@ -11,19 +10,14 @@ import SideMenuComponent from '@/components/SideMenuComponent.vue';
 import DocumentEditorComponent from '@/components/DocumentEditorComponent.vue';
 import 
 {
-    type IDocumentation,
-    type MainMenuItem, 
-    type SubMenuItem, 
     selectedDocumentation, 
-    selectedDocumentaitonItem 
+    selectedDocumentationItem 
 } from '../models/documentation';
 import { user } from '@/models/user';
 import { onBeforeUnmount } from 'vue';
 
-const setSelectedDocumentationItem = (item: MainMenuItem | SubMenuItem | IDocumentation): void => { selectedDocumentaitonItem.value = item }
-
 onBeforeUnmount(() => {
     selectedDocumentation.value = null
-    selectedDocumentaitonItem.value = null
+    selectedDocumentationItem.value = null
 })
 </script>
