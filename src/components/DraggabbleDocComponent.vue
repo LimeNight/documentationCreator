@@ -9,13 +9,12 @@
         <template #item="{ element: documentation }">
 
                 <div class="exist-documentation-list" 
-                     @click=" selectedDocumentation = documentation" >
-
-                    <p class="exist-document-title"
-                       @click="selectedDocumentationItem = documentation">
-                        {{ documentation.title }} {{ documentation.position }}
-                        <span @click="deleteDoc(documentation.id ,documentation.position)" class="del-btn">-</span>
-                    </p>
+                     @mouseover=" selectedDocumentation = documentation" >
+                        <p class="title document-menu-items"
+                           @click="selectedDocumentationItem = documentation">
+                            {{ documentation.title }}
+                            <span @click="deleteDoc(documentation.id ,documentation.position)" class="del-btn">-</span>
+                        </p>
 
                     <div v-if="documentation.mainMenuItems.length > 0" 
                         class="main-menu-items">
@@ -29,7 +28,9 @@
         </template>
     </draggable>
     <div v-else class="exist-documentation-list">
-        <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, 0)" />
+        <p>
+            <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, 0)" />
+        </p>
     </div>
 </template>
 

@@ -88,7 +88,7 @@ nav a{
 .exist-documentation-list>p>input{
     width: 80%;
 }
-.exist-document-title{
+.document-menu-items{
     margin: 0;
     padding: 0;
     background-color: var(--document-title-bgcolor);
@@ -99,6 +99,13 @@ nav a{
     align-items: center;
     justify-content: center;
     transform: translateX(10px);
+}
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-indent: 5px;
+    overflow: clip;
 }
 .main-menu-items>p{
     background-color: var(--main-menu-bgcolor);
@@ -129,10 +136,10 @@ nav a{
     color: var(--main-text-color);
 }
 .del-btn{
-    border: 1px solid yellow;
+    content: '-';
+    background-color: red;
     height: 100%;
     width: 20px;
-    padding: 5px;
     cursor: pointer;
 }
 .login-container{

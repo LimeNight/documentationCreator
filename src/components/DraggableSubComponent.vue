@@ -9,14 +9,12 @@
 
             <div class="sub-menu-items">
 
-                <p @click="selectedDocumentationItem = subMenu"> 
-                    {{ subMenu.title }} {{ subMenu.position }} 
+                <p class="title" @click="selectedDocumentationItem = subMenu"> 
+                    {{ subMenu.title }}
                     <span @click="deleteSub(<IDocumentation>selectedDocumentation ,props.mainMenu, subMenu.position)" class="del-btn">-</span>
                 </p>
                 
-                
-                <AddSubButton v-if="mainMenu.subMenuItems"
-                              @addSub="addSub(<IDocumentation>selectedDocumentation, props.mainMenu, subMenu.position)" />
+                <AddSubButton v-if="mainMenu.subMenuItems" @addSub="addSub(<IDocumentation>selectedDocumentation, props.mainMenu, subMenu.position)" />
             </div>
         </template>
     </draggable>

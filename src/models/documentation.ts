@@ -67,6 +67,14 @@ export let newMainMenu = reactive<MainMenuItem>({
 
 export let newDocumentation = reactive<Documentation>(new Documentation())
 
+export const addParahraph = async (documentation: IDocumentation, selectedItem: IDocumentation | MainMenuItem | SubMenuItem | null , position: number): Promise<void> => {
+    if(selectedItem){
+        selectedItem.discriptions?.splice(position, 0, Object.assign({}, newDiscription))
+        calculatePosition(selectedItem.discriptions)
+        docRequest.update(documentation)
+    }
+}
+
 export const addSub = async (documentation: IDocumentation, mainMenu: MainMenuItem, position: number = 1): Promise<void> => {
     mainMenu.subMenuItems.splice(position, 0, Object.assign({}, newSubMenu))
     calculatePosition(mainMenu.subMenuItems)
@@ -88,28 +96,37 @@ export const addNewDocumentation = async (newDocumentation: IDocumentation, posi
     if (doc) doc.id = savedDocumentation.id
 }
 
+export const deleteParagraph = (documentation: IDocumentation, selectedItem: IDocumentation | MainMenuItem | SubMenuItem | null , position: number) => {
+    if (selectedItem){
+        selectedItem?.discriptions.splice(position - 1, 1)
+        if (selectedItem.discriptions.length != 0) calculatePosition(selectedItem?.discriptions)
+        docRequest.update(documentation)
+    }
+}
+
 export const deleteSub = async (documentation: IDocumentation, mainMenu: MainMenuItem, position: number): Promise<void> => {
-    mainMenu.subMenuItems.splice(position - 1, 1)
-    calculatePosition(mainMenu.subMenuItems)
-    docRequest.update(documentation)
+    let sure = window.confirm('Are you sure you want to delete it?')
+    if(sure){
+        mainMenu.subMenuItems.splice(position - 1, 1)
+        calculatePosition(mainMenu.subMenuItems)
+        docRequest.update(documentation)
+    }
 }
 
 export const deleteMain = async (documentation: IDocumentation, position: number): Promise<void> => {
+    let sure = window.confirm('Are you sure you want to delete it?')
+    if(sure){
     documentation.mainMenuItems.splice(position - 1, 1)
     calculatePosition(documentation.mainMenuItems)
     docRequest.update(documentation)
+    }
 }
 
 export const deleteDoc = async (id:number, position: number): Promise<void> => {
-    user.value.documentations.splice(position - 1, 1)
-    calculatePosition(user.value.documentations)
-    docRequest.delete(id)
-}
-
-export const addDiscription = async (documentation: IDocumentation, selectedItem: IDocumentation | MainMenuItem | SubMenuItem | null , position: number): Promise<void> => {
-    if(selectedItem){
-        selectedItem.discriptions?.splice(position, 0, Object.assign({}, newDiscription))
-        calculatePosition(selectedItem.discriptions)
-        docRequest.update(documentation)
+    let sure = window.confirm('Are you sure you want to delete it?')
+    if(sure){
+        user.value.documentations.splice(position - 1, 1)
+        calculatePosition(user.value.documentations)
+        docRequest.delete(id)
     }
 }

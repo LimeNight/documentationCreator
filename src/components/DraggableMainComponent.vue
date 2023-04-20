@@ -9,7 +9,7 @@
 
             <div class="main-menu-items">
 
-                <p @click="selectedDocumentationItem = mainMenu"> {{ mainMenu.title }} {{ mainMenu.position }}
+                <p class="title" @click="selectedDocumentationItem = mainMenu"> {{ mainMenu.title }}
                     <span @click="deleteMain(<IDocumentation>selectedDocumentation, mainMenu.position)" class="del-btn">-</span>
                 </p>
 
@@ -18,7 +18,7 @@
                     <DraggableSub :mainMenu="mainMenu"/>
                 </div>
 
-                <AddSubButton v-else @addSuu="addSub(documentation, mainMenu, 1)" />
+                <AddSubButton v-else @addSub="addSub(documentation, mainMenu, 1)" />
                 <AddMainButton @addMain="addMain(documentation, mainMenu.position)" />
             </div>
         </template>
