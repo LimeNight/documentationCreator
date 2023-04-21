@@ -1,5 +1,5 @@
 <template>
-    <aside class="side-menu" v-if="user.documentations">
+    <aside class="side-menu" v-if="user.documentations && user.authenticate">
         <DraggableDoc />
     </aside>
     <section class="edit-container">

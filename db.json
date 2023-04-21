@@ -29,7 +29,7 @@
     {
       "id": 1,
       "userId": 1,
-      "position": 2,
+      "position": 1,
       "title": "ez is fasza lesz így",
       "mainMenuItems": [
         {
@@ -45,12 +45,22 @@
             {
               "title": "newest",
               "position": 1,
-              "discriptions": []
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": "Fantasztikus helpeket kaptam!"
+                }
+              ]
             },
             {
               "title": "newest",
               "position": 2,
-              "discriptions": []
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": ""
+                }
+              ]
             }
           ]
         }
@@ -58,7 +68,27 @@
       "discriptions": [
         {
           "position": 1,
-          "paragraph": ""
+          "paragraph": "This interface is used to define the methods for interacting with a document repository. The create() method is used to create a new document, the read() method is used to retrieve documents associated with a particular user, the update() method is used to update an existing document or a list of documents, and the delete() method is used to delete a document from the repository."
+        },
+        {
+          "position": 2,
+          "paragraph": "készíts dokumentációt erről a kódról\nexport type Discription = {\n    paragraph: string,\n    position: number\n}\n\nexport type SubMenuItem = {\n    title:string,\n    position: number,\n    discriptions: Discription[]\n}\n\nexport type MainMenuItem = {\n    title:string,\n    position: number,\n    discriptions: Discription[],\n    subMenuItems: SubMenuItem[]\n}\n\nexport interface IDocumentation{\n    id: number,\n    userId: number,\n    position: number,\n    title: string,\n    discriptions: Discription[]\n    mainMenuItems: MainMenuItem[]\n}\n\nexport class Documentation implements IDocumentation{\n    constructor(\n        public id: number = 0,\n        public userId: number = 0,\n        public position: number = 0,\n        public title: string = 'new',\n        public discriptions: Discription[] = [],\n        public mainMenuItems: MainMenuItem[] = []\n    ){}\n}"
+        },
+        {
+          "position": 3,
+          "paragraph": "make a documentation from this code\nimport type { IDocumentation } from \"./documentation\"\nimport { ref } from \"vue\"\n\nexport interface ILoginForm{\n        email?: string,\n        password?: string\n}\n\nexport interface IRegister extends ILoginForm{\n        username?: string\n}\n\nexport interface IUser extends IRegister{\n        id?: number,\n        authenticate: boolean\n}\n\nexport class User implements IUser{\n        constructor(\n                public id : number = 0,\n                public username: string = '',\n                public email: string = '',\n                public password: string = '',\n                public documentations: IDocumentation[] = [],\n                public authenticate: boolean = false\n        ){}\n}\n\nexport const user = ref<User>(new User())"
+        },
+        {
+          "position": 4,
+          "paragraph": "/*\nThis code is for creating a User class and an interface for a login form and register form. \n\nThe User class implements the IUser interface, which extends the IRegister interface, which extends the ILoginForm interface. The User class has properties for id, username, email, password, documentations, and authenticate. The ILoginForm interface has properties for email and password, while the IRegister interface has properties for username, email, and password. \n\nThe code also creates a user variable that is a ref of type User. \n*/"
+        },
+        {
+          "position": 5,
+          "paragraph": "készíts dokumentációt erről a kódról\n<template>\n    <draggable :list=\"props.mainMenu.subMenuItems\" \n               itemKey=\"position\"\n               @change=\"calculatePosition(props.mainMenu.subMenuItems), \n               docRequest.update(<IDocumentation>selectedDocumentation)\" \n               :animation=\"300\">\n\n        <template #item=\"{ element: subMenu }\">\n\n            <div class=\"sub-container\">\n\n                <div class=\"title sub-menu-item\" @click=\"selectedDocumentationItem = subMenu\"> \n                    <p>{{ subMenu.title }}</p>\n                    <span @click=\"deleteSub(<IDocumentation>selectedDocumentation ,props.mainMenu, subMenu.position)\" class=\"del-btn\">-</span>\n                </div>\n                \n                <AddSubButton v-if=\"mainMenu.subMenuItems\" @addSub=\"addSub(<IDocumentation>selectedDocumentation, props.mainMenu, subMenu.position)\" />\n            </div>\n        </template>\n    </draggable>\n</template>\n\n<script setup lang=\"ts\">\nimport AddSubButton from './AddSubButtonComponent.vue';\nimport { docRequest } from '../models/requests';\nimport draggable from 'vuedraggable';\nimport \n{\n    addSub,\n    selectedDocumentation,\n    calculatePosition,\n    IDocumentation,\n    deleteSub,\n    selectedDocumentationItem\n} from '../models/documentation';\n\nconst props = defineProps(['mainMenu'])\n</script>"
+        },
+        {
+          "position": 6,
+          "paragraph": "A kód egy Vue.js komponenst definiál, amely lehetővé teszi a felhasználók számára, hogy a dokumentációs menüt rendezhessék. A komponens egy draggable komponenst használ, amely lehetővé teszi a felhasználók számára, hogy a dokumentációkat maguk helyezhessék el."
         }
       ]
     },
@@ -180,49 +210,6 @@
             {
               "title": "Second Doc Second Sub",
               "position": 3,
-              "discriptions": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 14,
-      "userId": 1,
-      "position": 1,
-      "title": "new",
-      "discriptions": [
-        {
-          "position": 1,
-          "paragraph": ""
-        }
-      ],
-      "mainMenuItems": [
-        {
-          "title": "new",
-          "position": 1,
-          "discriptions": [],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
-              "discriptions": []
-            },
-            {
-              "title": "newest",
-              "position": 2,
-              "discriptions": []
-            }
-          ]
-        },
-        {
-          "title": "new",
-          "position": 2,
-          "discriptions": [],
-          "subMenuItems": [
-            {
-              "title": "newest",
-              "position": 1,
               "discriptions": []
             }
           ]
