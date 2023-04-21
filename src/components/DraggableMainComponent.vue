@@ -6,17 +6,15 @@
                :animation="300">
 
         <template #item="{ element: mainMenu }">
+            <div class="main-container">
 
-            <div class="main-menu-items">
-
-                <p class="title" @click="selectedDocumentationItem = mainMenu"> {{ mainMenu.title }}
+                <div class="title main-menu-item" @click="selectedDocumentationItem = mainMenu"> 
+                    <p>{{ mainMenu.title }}</p>
                     <span @click="deleteMain(<IDocumentation>selectedDocumentation, mainMenu.position)" class="del-btn">-</span>
-                </p>
-
-                <div v-if="mainMenu.subMenuItems.length > 0">
-                    <!-- Entry point -->
-                    <DraggableSub :mainMenu="mainMenu"/>
                 </div>
+
+                <!-- Entry point -->
+                <DraggableSub v-if="mainMenu.subMenuItems.length > 0" :mainMenu="mainMenu"/>
 
                 <AddSubButton v-else @addSub="addSub(documentation, mainMenu, 1)" />
                 <AddMainButton @addMain="addMain(documentation, mainMenu.position)" />

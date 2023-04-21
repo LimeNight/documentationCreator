@@ -4,7 +4,7 @@
         <input type="text" v-model="userForm.email" required>
         <label for="name">Password</label>
         <input type="password" v-model="userForm.password" required>
-        <button type="submit">Login</button>
+        <button type="submit" class="ok-btn">Login</button>
     </form>
 </template>
 

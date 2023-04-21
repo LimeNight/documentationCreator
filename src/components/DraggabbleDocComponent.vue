@@ -7,30 +7,24 @@
                docRequest.update(user.documentations)">
 
         <template #item="{ element: documentation }">
+            <div @mouseover="selectedDocumentation = documentation"
+                 class="document-container">
 
-                <div class="exist-documentation-list" 
-                     @mouseover=" selectedDocumentation = documentation" >
-                        <p class="title document-menu-items"
-                           @click="selectedDocumentationItem = documentation">
-                            {{ documentation.title }}
-                            <span @click="deleteDoc(documentation.id ,documentation.position)" class="del-btn">-</span>
-                        </p>
-
-                    <div v-if="documentation.mainMenuItems.length > 0" 
-                        class="main-menu-items">
-                        <!-- Entry point -->
-                        <DraggableMain :documentation="documentation"/>
-                    </div>
-                    
-                    <AddMainButton @addMain="addMain(documentation, 1)" v-else/>
-                    <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, documentation.position)" />
+                <div class="title document-menu-item" @click="selectedDocumentationItem = documentation">
+                    <p>{{ documentation.title }}</p>
+                    <span @click="deleteDoc(documentation.id, documentation.position)" class="del-btn">-</span>
                 </div>
+
+                <!-- Entry point -->
+                <DraggableMain v-if="documentation.mainMenuItems.length > 0" :documentation="documentation" />
+    
+                <AddMainButton @addMain="addMain(documentation, 1)" v-else />
+                <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, documentation.position)" />
+            </div>
         </template>
     </draggable>
-    <div v-else class="exist-documentation-list">
-        <p>
-            <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, 0)" />
-        </p>
+    <div v-else >
+        <AddDocButton @addNewDocumentation="addNewDocumentation(newDocumentation, 0)" />
     </div>
 </template>
 

@@ -105,7 +105,7 @@ export const deleteParagraph = (documentation: IDocumentation, selectedItem: IDo
 }
 
 export const deleteSub = async (documentation: IDocumentation, mainMenu: MainMenuItem, position: number): Promise<void> => {
-    let sure = window.confirm('Are you sure you want to delete it?')
+    let sure = window.confirm(`Are you sure you want to delete ${mainMenu.subMenuItems[position-1].title}?`)
     if(sure){
         mainMenu.subMenuItems.splice(position - 1, 1)
         calculatePosition(mainMenu.subMenuItems)
@@ -114,7 +114,7 @@ export const deleteSub = async (documentation: IDocumentation, mainMenu: MainMen
 }
 
 export const deleteMain = async (documentation: IDocumentation, position: number): Promise<void> => {
-    let sure = window.confirm('Are you sure you want to delete it?')
+    let sure = window.confirm(`Are you sure you want to delete ${documentation.mainMenuItems[position-1].title}?`)
     if(sure){
     documentation.mainMenuItems.splice(position - 1, 1)
     calculatePosition(documentation.mainMenuItems)
@@ -123,7 +123,7 @@ export const deleteMain = async (documentation: IDocumentation, position: number
 }
 
 export const deleteDoc = async (id:number, position: number): Promise<void> => {
-    let sure = window.confirm('Are you sure you want to delete it?')
+    let sure = window.confirm(`Are you sure you want to delete ${user.value.documentations[position-1].title}?`)
     if(sure){
         user.value.documentations.splice(position - 1, 1)
         calculatePosition(user.value.documentations)

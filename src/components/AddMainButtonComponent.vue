@@ -1,7 +1,7 @@
 <template>
     <button class="plus-menu-btn" 
             @click="emit('addMain')">
-            Add main title
+            Add main
     </button>
 </template>
 <script setup lang="ts">

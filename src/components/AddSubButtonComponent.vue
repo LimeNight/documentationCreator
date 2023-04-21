@@ -1,7 +1,7 @@
 <template>
     <button class="plus-menu-btn" 
             @click="emit('addSub')">
-            Add sub title
+            Add sub
     </button>
 </template>
 <script setup lang="ts">

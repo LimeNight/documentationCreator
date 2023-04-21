@@ -6,7 +6,7 @@
         <input type="text" v-model="userForm.email" required>
         <label for="password">Password</label>
         <input type="password" v-model="userForm.password" required>
-        <button type="submit">Register</button>
+        <button type="submit" class="ok-btn">Register</button>
     </form>
 </template>
 <script setup lang="ts">
@@ -18,7 +18,6 @@ const emit = defineEmits(['register'])
 let userForm = reactive<IRegister>({
     username: '',
     email: '',
-    password: '',
-    documentations: []
+    password: ''
 })
 </script>

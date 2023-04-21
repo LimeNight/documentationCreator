@@ -7,12 +7,12 @@
 
         <template #item="{ element: subMenu }">
 
-            <div class="sub-menu-items">
+            <div class="sub-container">
 
-                <p class="title" @click="selectedDocumentationItem = subMenu"> 
-                    {{ subMenu.title }}
+                <div class="title sub-menu-item" @click="selectedDocumentationItem = subMenu"> 
+                    <p>{{ subMenu.title }}</p>
                     <span @click="deleteSub(<IDocumentation>selectedDocumentation ,props.mainMenu, subMenu.position)" class="del-btn">-</span>
-                </p>
+                </div>
                 
                 <AddSubButton v-if="mainMenu.subMenuItems" @addSub="addSub(<IDocumentation>selectedDocumentation, props.mainMenu, subMenu.position)" />
             </div>
