@@ -21,15 +21,15 @@ const getUser = async (id: number): Promise<void> => {
     .then(res => {
       user.value = res.data
       user.value.authenticate = true
+      return getToken()
     })
-    .then(async () => { user.value.documentations = await docRequest.read(id)})
+    .then(async (accessToken: string) => { user.value.documentations = await docRequest.read(id, accessToken)})
     .catch(err => console.log(err))
 }
 
 onBeforeMount(async (): Promise<void> => {
   let token = getToken()
   let id = parseInt(getId())
-
   if (token && id) await getUser(id)
 })
 </script>

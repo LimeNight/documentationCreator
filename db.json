@@ -38,12 +38,16 @@
           "discriptions": [
             {
               "position": 1,
-              "paragraph": "wjeflkjdfjaskldfa"
+              "paragraph": "mit csinál ez a függvény\nconst register = async (form: IRegister): Promise<void> => {\n    await axios.post(\"http://localhost:3000/register\", form)\n    .then(() => { router.replace('/login') })\n    .catch(err => { console.log(err) })\n}"
+            },
+            {
+              "position": 2,
+              "paragraph": "\n\n// Ez a függvény egy aszinkron POST kéréssel regisztrál egy felhasználót a \"http://localhost:3000/register\" címre. Ha a regisztráció sikeres, akkor átirányítja a felhasználót a \"/login\" oldalra. Ha hiba történik, akkor kiírja a hibaüzenetet a konzol"
             }
           ],
           "subMenuItems": [
             {
-              "title": "newest",
+              "title": "valódi csoda",
               "position": 1,
               "discriptions": [
                 {
@@ -68,7 +72,7 @@
       "discriptions": [
         {
           "position": 1,
-          "paragraph": "This interface is used to define the methods for interacting with a document repository. The create() method is used to create a new document, the read() method is used to retrieve documents associated with a particular user, the update() method is used to update an existing document or a list of documents, and the delete() method is used to delete a document from the repository."
+          "paragraph": "This interface is used to define the methods for interacting with a document repository. The create() method is used to create a new document, the read() method is used to retrieve documents associated with a particular user, the update() method is used to update an existing document or a list of documents, and the delete() method is used to delete a document from the repository.."
         },
         {
           "position": 2,
@@ -234,6 +238,42 @@
           "position": 2,
           "discriptions": [],
           "subMenuItems": []
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "userId": 1,
+      "position": 2,
+      "title": "new",
+      "discriptions": [],
+      "mainMenuItems": [
+        {
+          "title": "new",
+          "position": 1,
+          "discriptions": [],
+          "subMenuItems": [
+            {
+              "title": "ssdfhksdf",
+              "position": 1,
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": "\n\n// Ez a függvény egy aszinkron hívást tesz egy API-hoz, amely regisztrál egy felhasználót a megadott form adataival. Ha a regisztráció sikeres, akkor a felhasználó átirányításra kerül a bejelentkezési oldalra. Ha a regisztráció sikert"
+                }
+              ]
+            },
+            {
+              "title": "newest",
+              "position": 2,
+              "discriptions": [
+                {
+                  "position": 1,
+                  "paragraph": ""
+                }
+              ]
+            }
+          ]
         }
       ]
     }

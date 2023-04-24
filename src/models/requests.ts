@@ -7,7 +7,7 @@ export const config: AxiosRequestConfig  = { headers: { Authorization: `Bearer $
 
 interface IDocumentReq{
     create(newDocumentation: IDocumentation): Promise<IDocumentation>,
-    read(userId: number): Promise<IDocumentation[]>,
+    read(userId: number, accessToken: string): Promise<IDocumentation[]>,
     update(documentation:  IDocumentation | IDocumentation[]): Promise<void>,
     delete(documentationId: number): Promise<string>
 }
@@ -22,10 +22,10 @@ class DocumentReq implements IDocumentReq{
         .catch(() => { return "Something went wrong!"});
     }
 
-    read = async (userId: number): Promise<IDocumentation[]> => {
-        const { headers } = config
+    read = async (userId: number, accessToken: string): Promise<IDocumentation[]> => {
+        const headers = { Authorization: `Bearer ${accessToken}` }
         let documentations: IDocumentation[] = []
-        await axios(this.url, { params: { userId: userId }, headers })
+        await axios(this.url, {headers,  params: { userId: userId }})
         .then(res => { documentations = res.data.map((document: IDocumentation) => document)})
         .catch(err => { console.log(err) })
         return documentations.sort((p1, p2) => (p1.position > p2.position) ? 1 : (p1.position < p2.position) ? -1 : 0);

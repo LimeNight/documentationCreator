@@ -17,16 +17,13 @@ const router = useRouter()
 
 const login = async (form: ILoginForm): Promise<void> => {
     await axios.post("http://localhost:3000/login", form)
-        .then(res => {
+        .then(async (res) => {
             let resUser = res.data
             setToken(resUser.accessToken)
             setId(resUser.user.id)
             user.value = resUser.user
             user.value.authenticate = true
-            return <number>resUser.user.id
-        })
-        .then(async (id: number) => {
-            user.value.documentations = await docRequest.read(id)
+            user.value.documentations = await docRequest.read(resUser.user.id, resUser.accessToken)
             router.replace('/')
         })
         .catch(err => {

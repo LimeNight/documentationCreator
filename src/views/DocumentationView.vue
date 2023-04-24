@@ -13,11 +13,6 @@ import { selectedDocumentationItem, selectedDocumentation } from '../models/docu
 import { user } from '@/models/user';
 import { onBeforeUnmount } from 'vue';
 import DraggableDoc from '../components/DraggabbleDocComponent.vue'
-import { watch } from 'vue';
-
-watch(selectedDocumentation , () => {
-    console.log(selectedDocumentation.value)
-})
 
 onBeforeUnmount(() => {
     selectedDocumentation.value = null

@@ -10,7 +10,7 @@
         </p>
 
         <p>
-            First of all you need to <RouterLink to="/register">register</RouterLink> this page. After that you can create unlimited documentation.
+            First of all you need to <RouterLink to="/register">register</RouterLink> on this page. After that you can create unlimited documentation.
         </p>
     </section>
 </template>
